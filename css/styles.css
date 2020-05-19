@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+.button {
+	position: relative;
+	border: none;
+	display:block;
+	padding: .5em 2.2em;
+	font-size: 25px;
+	background-color: transparent;
+	cursor: pointer;
+	user-select: none;
+	color: royalblue;
+	overflow: hidden;
+	transition: .3s;
+}
+.button span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	z-index: -1;
+	border: 5px solid royalblue;
+}
+.button span:before {
+	content: '';
+	position: absolute;
+	width: 8%;
+	height: 500%;
+	background-color: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-60deg);
+	transition: .3s;
+}
+.button:hover, .button:focus {
+	color: #fff;
+}
+.button:hover span:before,
+.button:focus span:before {
+	transform: translate(-50%, -50%) rotate(-90deg);
+	width: 100%;
+	background-color: royalblue;
+}
